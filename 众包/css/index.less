@@ -1,0 +1,523 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,img,span{margin:0;padding:0;}
+body{font:14px "微软雅黑","Arial Narrow",HELVETICA;background:#f1f1f1;width: 100%;}
+a{text-decoration:none; color:#666;}
+a:hover{text-decoration:none;color: #30CE84;}
+i,em{font-style:normal;}
+b,strong{font-weight:100;}
+ul,ol{list-style:none;}
+img{border:none;}
+input{outline:none;}
+.clear:after{content:'.';display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
+html{
+width: 100%;
+height: 100%;
+}
+
+.swiper-button-prev{
+cursor: pointer;
+}
+/******************************************************  公用 **********************************************************/
+
+h2{
+  font-size:36px;
+  font-weight:bold;
+  color: #333333;
+  text-align: center;
+}
+.desc{
+  margin: 15px 0 80px 0;
+  color: #999999;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+.animate-hidden{
+  // opacity:0!important;
+  transform:translateY(50px);
+  transition: all .5s;
+}
+.animate-visible{
+  // opacity:1;
+  transform:translateY(0);
+  transition: all .5s;
+}
+#contact,
+#advantage,
+#industry,
+#preview,
+#process {
+    position: relative;
+}
+
+#contactTop,#advantageTop,#industryTop,#previewTop,#processTop{
+  position: absolute;
+  top: -80px;
+  // display: block;
+  // background: red;
+  // width: 100%;
+  // height: 20px;
+}
+.activeNav{
+  border-bottom: 1px solid #333;
+}
+
+/******************************************************  头部 **********************************************************/
+
+.nav-Bg {
+    position: relative;
+    img {
+      width: 1920px;
+  }
+}
+
+.nav-Wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    z-index: 11;
+    height: 79px;
+    .nav-list {
+      height: 80px;
+      float: right;
+      font-size: 18px;
+      li {
+        float: left;
+        padding: 30px 30px 0 30px;
+        a {
+          color: #fff;
+          cursor: pointer;
+          display: block;
+        }
+      &:hover {
+        a{
+          border-bottom: 1px solid #fff;
+          }
+      }
+    }
+    .login-zb{
+      margin-top: -6px;
+      padding: 30px 0 0 140px;
+      a{
+        border-radius: 2px;
+        background: #22adf7;
+        color: #fff;
+        font-size: 18px;
+        padding: 8px 29px;
+      }
+      &:hover {
+        a{
+          border-bottom:none;
+        }
+      }
+    }
+  }
+  .logo,.logoa{
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    float: left;
+    margin-top: 15px;
+  }
+  .logo{
+    background-image: url("../images/logo.png");
+  }
+  .logoa{
+    background-image: url("../images/logo.png");
+  }
+}
+
+.nav-Wrap[data-fixed="fixed"] {
+  li{
+    a{
+      color: #333;
+      &:hover{
+        border-bottom: 1px solid #333;;
+      }
+    }
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background: #fff; 
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.nav-inner {
+    width: 1200px;
+    margin: 0 auto;
+    height: 88px;
+    position: relative;
+}
+
+
+.nav-Wrap .logo h1 ,.nav-Wrap .logoa h1{
+    text-indent: -9999px;
+    width: 129px;
+    height: 49px;
+    overflow: hidden;
+}
+
+.nav-Bg {
+  .swiper-container{
+    .swiper-pagination {
+      bottom: 32px;
+    }
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff;
+      background: transparent;
+    }
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+  
+  }
+}
+
+
+.banner_slide01,banner_slide02 {
+    width: 100%;
+    height: 800px;
+    /* background-size: 100%;  */
+}
+
+.banner_slide01 {
+    background: url("../images/banner_01.png") no-repeat center center;
+}
+
+.banner_slide02 {
+    background: url("../images/banner_01.png") no-repeat center center;
+
+}
+
+
+/******************************************************  椰云众包服务关系 **********************************************************/
+#contact{
+  background: #fff;
+  padding:100px 0 ;
+  .contact-wrap{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+/******************************************************  椰云众包六大优势 **********************************************************/
+#advantage{
+  background: #22ADF7;
+  padding:100px 0 ;
+  h2,.desc{
+    color: #fff;
+  }
+  .advantage-wrap{
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .adv-ul{
+    .adv-li{
+      width: 397px;
+      height: 515px;
+      // background: #fff;
+      display: inline-block;
+      text-align: center;
+      padding: 40px 57px;
+      box-sizing: border-box;
+      vertical-align: top;
+      .adv-img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 28px auto;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        img{
+          width: 90px;
+          padding: 55px 55px 0;
+        }
+      }
+      .adv-imga{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 28px auto;
+        border: 1px solid #22ADF7;
+        border-radius: 50%; 
+        img{
+          width: 50px;
+          padding: 25px;
+        }
+      }
+      .adv-info{
+        font-size:16px;
+        color: #fff;
+      }
+      .adv-infoa{
+        font-size:16px;
+        line-height:30px;
+        color: #333333;
+        text-align: left;
+        text-indent: 2em;
+      }
+      .adv-imga,.adv-infoa{
+        display: none;
+        transform: translateY(0);
+        transition: all 0.4s;
+        // display: block;
+      }
+      .adv-img,.adv-info{
+        display: block;
+      }
+    }
+  }
+}
+/******************************************************  服务人群 **********************************************************/
+#industry{
+  background:#fff;
+  padding:100px 0 ;
+  .industry-wrap{
+    width: 1200px;
+    margin: 0 auto;
+    .industry-bg{
+
+    }
+    h3{
+      font-size:24px;
+      font-weight:bold;
+      color:rgba(51,51,51,1);
+      margin: 77px 0 60px 0;
+      text-align: center;
+    }
+    .crowd-ul{
+      li{
+        display: inline-block;
+        margin-right: 9px;
+        margin-bottom: 6px;
+        &:nth-of-type(4n){
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+/******************************************************  平台预览 **********************************************************/
+#preview{
+  padding: 100px 0;
+  .preview-wrap{
+    width: 1200px;
+    margin: 0 auto;
+    .preview-content{
+      background: #fff;
+      img{
+        width: 605px;
+        height: 389px;
+      }
+      .preview-info{
+        display: inline-block;
+        vertical-align: top;
+        margin: 60px 70px 0 39px;
+        ul{
+          border-bottom: 1px solid #CCCCCC;
+          li{
+            font-size:16px;
+            color: #333333;
+            line-height: 24px;
+            margin-bottom: 20px;
+            &::before{
+              content: '';
+              display: inline-block;
+              background: #22ADF7;
+              width: 6px;
+              height: 6px;
+              border-radius: 50%  ;
+              vertical-align: middle;
+              margin-right: 10px;
+            }
+          }
+        }
+        .bnt{
+          margin-top: 30px;
+          a{
+            font-size:18px;
+            display: inline-block;
+            background: #22ADF7;
+            color: #fff;
+            padding: 13px 36px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/******************************************************  对接流程 **********************************************************/
+#process{
+  padding: 100px 0;
+  background: #fff;
+  .process-wrap{
+    width: 1200px;
+    margin: 0 auto;
+    ul{
+      li{
+        .imgbg{
+          background: url(../images/process-bg.png) no-repeat center center;
+          width: 90px;
+          height: 80px;
+          line-height: 80px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 36px;
+          display: inline-block;
+          margin-right: 16px;
+          margin-bottom: 30px;
+          span{
+            display: inline-block;
+            margin-left: 18px;
+          }
+        }
+        .info{
+          width: 1089px;
+          height: 80px;
+          border: 1px solid #CCCCCC;
+          line-height: 80px;
+          font-size: 24px;
+          padding-left: 60px;
+          box-sizing: border-box;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+/***************************************************** 底部 **********************************************/
+#footer{
+  .footer-wrap{
+    background: #292A2A;
+    .footer-link{
+      color: #fff;
+      width: 1200px;
+      margin: 0 auto;
+      padding: 60px 0;
+      .link-left,.link-right{
+        display: inline-block;
+        vertical-align: top;
+        .dl-5{
+          display: block;
+          dt,dd,ul,li{
+            display: inline-block;
+          }
+          li{
+            margin-right: 20px;
+          }
+        }
+        dl{
+          display: inline-block;
+          margin-right: 62px;
+          vertical-align: top;
+          dt{
+            font-size: 16px;
+            margin-bottom: 30px;
+          }
+          dd{
+            font-size: 14px;
+            ul{
+              li{
+                a{
+                  color: #fff;
+                }
+                line-height: 24px;
+                margin-bottom: 18px;
+              }
+            }
+          }
+        }
+      }
+      .link-right{
+        margin-left: 196px;
+        .public{
+          display: inline-block;
+          margin-top: 32px;
+          text-align: center;
+          &:nth-of-type(2){
+            margin-left: 108px;
+          }
+          img{
+            width: 120px;
+          }
+          p{
+            font-size: 14px;
+            margin-top:20px;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom{
+    background: #444444;
+    padding: 26px 0 16px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    p{
+      margin-bottom: 10px;
+    }
+  }
+}
+/***************************************************** 弹窗 **********************************************/
+.zizhi-wrap{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  z-index: 101;
+  padding-top: 5%;
+  display: none;
+}
+.zizhi{
+  width: 470px;
+  background: #fff;
+  color: rgb(124, 119, 119);
+  margin:0 auto;
+  position: relative;
+  padding: 24px 20px;
+  transition:all .4s;
+  transform: translateY(0);
+  .title{
+    font-size: 22px;
+  }
+  .content{
+    padding: 24px 30px;
+    font-size: 16px;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 1px;
+  }
+  .bnt{
+    text-align: right;
+    margin-right: 5px;
+    color: #fff;
+    cursor:pointer;
+    font-size: 18px;
+    span{
+      line-height: 36px;
+      display: inline-block;
+      padding: 0 20px;
+      background: #22ADF7;
+    }
+  }
+  .close{
+    font-size: 45px;
+    color: #999;
+    font-weight: lighter;
+    display: po;
+    position: absolute;
+    right: 20px;
+    top: 3px;
+    text-align: right;
+    cursor:pointer;
+  }
+}
