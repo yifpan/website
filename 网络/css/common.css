@@ -34,7 +34,6 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #22ADF7 !important;
 }
 i,
 em {
@@ -66,7 +65,6 @@ html {
   width: 100%;
   height: 100%;
   min-width: 1350px;
-  overflow-x: hidden;
 }
 .swiper-button-prev {
   cursor: pointer;
@@ -92,11 +90,14 @@ html {
   cursor: pointer;
   display: block;
   margin: 0 30px;
+  padding-bottom: 4px;
 }
 .nav-list li a:hover {
-  border-bottom: 1px solid #fff;
-  transition: All 1s ;
+  border-bottom: 2px solid #fff;
   color: #fff !important;
+}
+.nav-list li .activeNav {
+  border-bottom: 2px solid #fff;
 }
 .nav-Bg {
   position: relative;
@@ -120,7 +121,7 @@ html {
   color: #fff;
 }
 .nav-inner {
-  width: 1150px;
+  width: 1200px;
   margin: 0 auto;
   height: 88px;
   position: relative;
@@ -157,9 +158,15 @@ html {
 .swiper-container .nav-swiperBntP {
   left: 3rem;
 }
+.swiper-container .nav-swiperBntP:focus {
+  outline: 0!important;
+}
 .swiper-container .nav-swiperBntN {
   right: 3rem;
   transform: rotate(180deg);
+}
+.swiper-container .nav-swiperBntN:focus {
+  outline: 0!important;
 }
 .nav-Bg .swiper-container .swiper-pagination {
   bottom: 32px;
@@ -180,12 +187,12 @@ banner_slide02 {
   height: 570px;
 }
 .banner_slide01 {
-  background: url("../images/banner_02.png") no-repeat center center;
+  background: url("../images/banner_01.png") no-repeat center center;
 }
 .banner_slide02 {
   width: 100%;
   height: 570px;
-  background-image: url("../images/banner_02.png") no-repeat center center;
+  background-image: url("../images/banner_01.png") no-repeat center center;
   /* background-size: 100%;  */
 }
 /***************************************************** 公用 **********************************************/
@@ -224,7 +231,7 @@ h2 {
 .section-titleP {
   color: #16df93;
   font-size: 18px;
-  margin-bottom: 41px;
+  margin-bottom: 16px;
 }
 .section-titleP span {
   position: relative;
@@ -255,14 +262,26 @@ h2 {
   margin: 0 auto;
   padding: 60px 0;
 }
+#footer .footer-wrap .footer-link .link-left::after {
+  display: inline-block;
+  content: '';
+  width: 1px;
+  position: absolute;
+  top: 24px;
+  right: -40px;
+  height: 295px;
+  background: #ccc;
+}
 #footer .footer-wrap .footer-link .link-left,
 #footer .footer-wrap .footer-link .link-right {
   display: inline-block;
+  position: relative;
   vertical-align: top;
 }
 #footer .footer-wrap .footer-link .link-left .dl-5,
 #footer .footer-wrap .footer-link .link-right .dl-5 {
   display: block;
+  margin-top: 54px;
 }
 #footer .footer-wrap .footer-link .link-left .dl-5 dt,
 #footer .footer-wrap .footer-link .link-right .dl-5 dt,
@@ -302,22 +321,28 @@ h2 {
 #footer .footer-wrap .footer-link .link-right dl dd ul li a {
   color: #fff;
 }
+#footer .footer-wrap .footer-link .link-left dl dd ul li a:hover,
+#footer .footer-wrap .footer-link .link-right dl dd ul li a:hover {
+  color: #22ADF7;
+}
 #footer .footer-wrap .footer-link .link-right {
-  margin-left: 194px;
+  margin-left: 140px;
 }
 #footer .footer-wrap .footer-link .link-right .public {
   display: inline-block;
   margin-top: 32px;
+  margin-right: 80px;
+  text-align: center;
 }
 #footer .footer-wrap .footer-link .link-right .public:nth-of-type(2) {
-  margin-left: 108px;
+  margin-right: 0;
 }
 #footer .footer-wrap .footer-link .link-right .public img {
   width: 120px;
 }
 #footer .footer-wrap .footer-link .link-right .public p {
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 #footer .footer-bottom {
   background: #444444;
@@ -328,6 +353,17 @@ h2 {
 }
 #footer .footer-bottom p {
   margin-bottom: 10px;
+}
+#footer .footer-bottom .beianWrap .beian {
+  border-right: 1px solid #ccc;
+  padding-right: 15px;
+  margin-right: 10px;
+}
+#footer .footer-bottom .beianWrap a {
+  color: #fff;
+}
+#footer .footer-bottom .beianWrap a:hover {
+  color: #22ADF7;
 }
 /***************************************************** 弹窗 **********************************************/
 .zizhi-wrap {
@@ -341,7 +377,7 @@ h2 {
   display: none;
 }
 .zizhi {
-  width: 470px;
+  width: 522px;
   background: #fff;
   color: #7c7777;
   margin: 0 auto;
@@ -354,10 +390,10 @@ h2 {
   font-size: 22px;
 }
 .zizhi .content {
-  padding: 24px 30px;
+  padding: 28px 30px;
   font-size: 16px;
   font-size: 18px;
-  line-height: 30px;
+  line-height: 32px;
   letter-spacing: 1px;
 }
 .zizhi .bnt {

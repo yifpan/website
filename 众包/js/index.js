@@ -4,11 +4,12 @@ $(function () {
   function collect() {
     this.apiUrl = "https://api.cocogc.cn/";
     //banner
+    var swiperLen = $('.swiper-wrapper').children('.swiper-slide').length;
     this.mySwiperNav = new Swiper('#header-nav .swiper-container', {
-      pagination: '.swiper-pagination',
-      // loop: true,
-      // autoplay: 2000,
-      autoplayDisableOnInteraction : false,
+      loop: swiperLen>1?true:false,
+      autoplay:swiperLen>1?true:false,
+      pagination: swiperLen>1?{el: '.swiper-pagination',clickable :true}:'',
+      allowTouchMove:swiperLen>1?true:false,
     })
 
     // 顶部
@@ -35,12 +36,13 @@ $(function () {
     //导航栏滚动
     $(".nav-Wrap .nav-list li a").off("click").on("click", function () {
         var navIndex = $(this).parent().index();
-        $(".nav-list li").find('a').removeClass("activeNav");
-        $(".nav-list li").find('a').eq(navIndex).addClass("activeNav");
+        if(navIndex != 5){
+            $(".nav-list li").find('a').removeClass("activeNav");
+            $(".nav-list li").find('a').eq(navIndex).addClass("activeNav");
+        }
         $("html, body").animate({
             scrollTop: $($(this).attr("href")).offset().top + "px"
         }, 500);
-        return false;
     })
 
     $(".adv-ul li").hover(function () {
@@ -59,34 +61,32 @@ $(function () {
         $(this).removeClass("animate-visible").addClass("animate-hidden")
     })
 
-
     $(window).on('scroll', function (e) {
       var top = document.documentElement.scrollTop || document.body.scrollTop;
       $(".nav-Wrap").attr("data-fixed", top>0 ? "fixed" : "");
       $(".nav-Wrap .logo").css("background-image", top>0 ? "url('images/logo1.png')" : "url('images/logo.png')");
-      if (712 >= top) {
+      if (719 >= top) {
           $(".nav-list li").find('a').removeClass("activeNav");
-      } else if (712 < top && top <= 2690) {
+      } else if (719 < top && top <= 2234) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(0).find('a').addClass("activeNav");
 
-      } else if (2690 < top && top <= 4083) {
+      } else if (2234 < top && top <= 3627) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(1).find('a').addClass("activeNav");
 
-      } else if (4083 < top && top <= 5980) {
+      } else if (3627 < top && top <= 5524) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(2).find('a').addClass("activeNav");
 
-      } else if (5980 < top && top <= 6736) {
+      } else if (5524 < top && top <= 6280) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(3).find('a').addClass("activeNav");
 
-      } else if (top > 6736) {
+      } else if (top > 6280) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(4).find('a').addClass("activeNav");
       }
   });
-
   }
 })

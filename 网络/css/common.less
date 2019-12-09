@@ -1,7 +1,7 @@
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,img,span{margin:0;padding:0;}
 body{font:14px "微软雅黑","Arial Narrow",HELVETICA;background:#f1f1f1;width: 100%;}
 a{text-decoration:none; color:#666;}
-a:hover{text-decoration:none;color: #22ADF7!important;}
+a:hover{text-decoration:none;}
 i,em{font-style:normal;}
 b,strong{font-weight:100;}
 ul,ol{list-style:none;}
@@ -12,7 +12,7 @@ html{
   width: 100%;
   height: 100%;
   min-width: 1350px;
-  overflow-x:hidden;
+  // overflow-x:hidden;
 }
 
 .swiper-button-prev{
@@ -37,11 +37,14 @@ html{
       cursor: pointer;
       display: block;
       margin: 0 30px;
+      padding-bottom: 4px;
       &:hover {
-        border-bottom: 1px solid #fff;
-        transition: All 1s ;
+        border-bottom: 2px solid #fff;
         color: #fff !important;
       }
+    }
+    .activeNav{
+      border-bottom: 2px solid #fff;
     }
   }
 }
@@ -69,7 +72,7 @@ html{
   color: #fff;
 }
 .nav-inner {
-  width: 1150px;
+  width: 1200px;
   margin: 0 auto;
   height: 88px;
   position: relative;
@@ -106,10 +109,16 @@ html{
 }
 .swiper-container .nav-swiperBntP {
   left: 3rem;
+  &:focus {
+    outline: 0!important;
+  }
 }
 .swiper-container .nav-swiperBntN {
   right: 3rem;
   transform: rotate(180deg);
+  &:focus {
+    outline: 0!important;
+  }
 }
 .nav-Bg .swiper-container .swiper-pagination {
   bottom: 32px;
@@ -135,13 +144,13 @@ html{
   height: 570px;
 }
 .banner_slide01 {
-  background: url("../images/banner_02.png") no-repeat center center;
+  background: url("../images/banner_01.png") no-repeat center center;
   // background-size: 100%; 
 }
 .banner_slide02 {
   width: 100%;
   height: 570px;
-  background-image: url("../images/banner_02.png") no-repeat center center;
+  background-image: url("../images/banner_01.png") no-repeat center center;
   /* background-size: 100%;  */
 }
 
@@ -186,7 +195,7 @@ h2{
 .section-titleP {
   color: #16df93;
   font-size: 18px;
-  margin-bottom: 41px;
+  margin-bottom: 16px;
 }
 
 .section-titleP span {
@@ -222,11 +231,23 @@ h2{
       width: 1200px;
       margin: 0 auto;
       padding: 60px 0;
+      .link-left::after{
+        display: inline-block;
+        content: '';
+        width: 1px;
+        position: absolute;
+        top: 24px;
+        right: -40px;
+        height: 295px;
+        background: #ccc;
+      }
       .link-left,.link-right{
         display: inline-block;
+        position: relative;
         vertical-align: top;
         .dl-5{
           display: block;
+          margin-top: 54px;
           dt,dd,ul,li{
             display: inline-block;
           }
@@ -248,6 +269,9 @@ h2{
               li{
                 a{
                   color: #fff;
+                  &:hover{
+                    color: #22ADF7;
+                  }
                 }
                 line-height: 24px;
                 margin-bottom: 18px;
@@ -257,20 +281,21 @@ h2{
         }
       }
       .link-right{
-        margin-left: 194px;
+        margin-left: 140px;
         .public{
           display: inline-block;
           margin-top: 32px;
+          margin-right: 80px;
+          text-align: center;
           &:nth-of-type(2){
-            margin-left: 108px;
+            margin-right: 0;
           }
           img{
             width: 120px;
-            
           }
           p{
             font-size: 14px;
-            margin-top:20px;
+            margin-top:16px;
           }
         }
       }
@@ -284,6 +309,19 @@ h2{
     font-size: 14px;
     p{
       margin-bottom: 10px;
+    }
+    .beianWrap{
+      .beian{
+        border-right: 1px solid #ccc;
+        padding-right:15px;
+        margin-right: 10px;
+      }
+      a{
+        color: #fff;
+        &:hover{
+          color: #22ADF7;
+        }
+      }
     }
   }
 }
@@ -300,7 +338,7 @@ h2{
   display: none;
 }
 .zizhi{
-  width: 470px;
+  width: 522px;
   background: #fff;
   color: rgb(124, 119, 119);
   margin:0 auto;
@@ -312,10 +350,10 @@ h2{
     font-size: 22px;
   }
   .content{
-    padding: 24px 30px;
+    padding: 28px 30px;
     font-size: 16px;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 32px;
     letter-spacing: 1px;
   }
   .bnt{

@@ -26,6 +26,7 @@
       color:rgba(51,51,51,1);
       opacity:1;
       margin-bottom: 14px;
+      letter-spacing: 1px;
     }
   }
 }
@@ -49,10 +50,16 @@
       width: 1200px;
       margin: 0 auto;
       li{
+        a{
+          display: block;
+        }
         background: #fff;
         margin-bottom: 60px;
         box-shadow:0px 2px 8px rgba(0,0,0,0.16);
         transition: all 0.5s;
+        border:1px solid #EEEFF0;
+        transform: translateY(0);
+        cursor: pointer;
         img{
           width: 320px;
           height: 300px;
@@ -74,13 +81,14 @@
             margin-top: 30px;
             display: inline-block;
             opacity:0;
-            transform:translateY(20px);
+            transform:translateY(10px);
             transition: all 1s;
           }
         }
         &:hover{
-          transform: scaleY(1.03);
+          transform: translateY(-5px);
           border:1px solid #22adf7;
+          // box-shadow:0px 2px 8px #22adf7;
           span{
             opacity:1;
             transform:translateY(0);
@@ -88,6 +96,9 @@
         }
       }
       .li-4{
+        &:hover{
+          cursor: default;
+        }
         div{
           text-align: center;
           margin: 0;
@@ -110,44 +121,46 @@
     }
   }
   .bg-circle{
-    z-index: 0;
+    div{
+      border-radius: 50%;
+      background-image: linear-gradient(-225deg, rgba(248,248,253,0.5) 0%, rgba(216,221,232,0.5) 100%);
+      // background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      z-index: -1;
+    }
     .cricle01{
       top: 0;
       left: 200px;
     }
     .cricle02{
       top: 0;
-      right: -200px;
+      right: 200px;
     }
     .cricle03{
-      top: 865px;
-      left: 300px;
+      top: 600px;
+      left: 0;
     }
     .cricle04{
-      top: 865px;
-      right: -200px;
+      top: 600px;
+      right: 0;
     }
     .cricle05{
-      top: 865px;
-      left: 30px;
+      top: 1200px;
+      left:200px;
     }
     .cricle06{
-      top: 865px;
+      top: 1200px;
       right: 200px;
     }
     .cricle07{
-      bottom: 0;
-      left:200px;
+      top:1800px;
+      left:0
     }
     .cricle08{
-      bottom: 0;
-      right: -200px;
-    }
-    img{
-      width: 563px;
-      position: absolute;
-      z-index: -1;
-      transition:all 1s; 
+      top: 1800px;
+      right: 0;
     }
   }
 }
@@ -190,6 +203,9 @@
         height: 300px;
         width: 794px;
         display: inline-block;
+        &:hover{
+          color: #22ADF7;
+        }
         img{
           width: 397px;
           height: 300px;
@@ -234,6 +250,8 @@
           margin-bottom: 16px;
           a{
             display: inline-block;
+            display: flex;
+            align-self: center;
             &:hover{
               .day{color: #22ADF7;}
               .year{color: #22ADF7;}
@@ -263,7 +281,7 @@
             color: #333;
             width: 224px;
             display: inline-block;
-            vertical-align: super;
+            vertical-align: top;
             padding-left: 14px;
           }
         }
@@ -312,20 +330,27 @@
         box-shadow:0px 1px 9px rgba(0,0,0,0.16);
         line-height: 145px;
         display: inline-block;
-        text-align: center;
         transition: all .5s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         font-size: 20px;
         font-weight:bold;
+        border:1px solid #fff;
+        transform: translateY(0);
+        cursor: pointer;
+        div{
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         img{
           width: 42px;
           height: 48px;
           margin-left: 26px;
         }
         &:hover{
-          transform: scaleY(1.1);
+          transform: translateY(-5px);
+          height:  155px;
+          // transform: scaleY(1.05);
           border:1px solid #22adf7;
         }
       }
@@ -334,29 +359,23 @@
 }
 /***************************************************** 咨询 **********************************************/
 #Consultation{
-  background: #22ADF7;
+  background: url(../images/zixun.png) no-repeat center center;
   color: #fff;
-  padding: 53px 0;
+  padding: 104px 0;
   .consultate-wrap{
     width: 1200px;
     text-align: center;
     margin: 0 auto;
     p{
       font-size: 32px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      line-height: 48px;
     }
     span{
-      background: #FFB612;
-      font-size: 16px;
-      padding: 7.5px 28px;
       display: inline-block;
-      transition: all .5s;
-      &:hover{
-        transform: scale(1.2);
-        cursor: pointer;
-      }
+      margin: 0 auto;
+      font-size: 18px;;
     }
-
   }
 }
 

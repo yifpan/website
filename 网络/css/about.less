@@ -6,7 +6,8 @@
   padding-top: 1px;
   font-size: 16px;
   .about-company{
-    margin: 50px;
+    margin: 50px 50px 20px 50px;
+    padding-bottom:80px;
   }
   dl{
     line-height: 30px;
@@ -30,26 +31,31 @@
       justify-content: space-around;
       height: 150px;
       li{
-        width: 280px;
+        width: 255px;
         height: 145px;
         box-shadow:0px 1px 9px rgba(0,0,0,0.16);
         line-height: 145px;
         display: inline-block;
-        text-align: center;
         transition: all .5s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         font-size: 20px;
         font-weight:bold;
-        margin: 0 10px;
+        border:1px solid #fff;
+        transform: translateY(0);
+        div{
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         img{
           width: 42px;
           height: 48px;
           margin-left: 26px;
         }
         &:hover{
-          transform: scaleY(1.1);
+          transform: translateY(-5px);
+          height:  155px;
+          // transform: scaleY(1.05);
           border:1px solid #22adf7;
         }
       }
@@ -67,113 +73,55 @@
 }
 
 /******************************************************  联系我们 **********************************************************/
-
-#section-contact {
-  overflow: hidden;
+#location{
+  background: url("../images/mapWrap.png") no-repeat center center;
   width: 100%;
-  height: 645px;
-  background: url("../images/bg_contact.jpg") no-repeat center center;
-  background-size: 100% 100%;
+  height: 752px;
+  h2{
+    color: #fff;
+    padding-top:  ;
+  }
+  .dec{
+    color: #fff;
+    font-size: 16px;
+  }
+  #map{
+    display: inline-block;
+    .anchorBL{
+      display:none;
+    }
+  }
+  .locationWrap{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top:102px;
+    ul{
+      display: inline-block;
+      color: #fff;
+      margin-left: 54px;
+      vertical-align: top;
+      li{
+        img{
+          width: 90px;
+          height: 90px;
+          margin-bottom: 57px;
+        }
+        div{
+          display: inline-block;
+          vertical-align: top;
+          margin-left: 26px;
+          margin-top: 14px;
+          h4{
+            font-size:24px;
+            margin-bottom: 10px;
+          }
+          p{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
 }
 
-#section-contact .section-titleH {
-  color: #16df93;
-  position: relative;
-  z-index: 1;
-}
-
-#section-contact .section-titleP,
-#section-produte .section-titleP {
-  color: #fff;
-  position: relative;
-  z-index: 1;
-}
-
-#section-produte .section-titleP span::before,
-#section-produte .section-titleP span::after {
-  background: #fff;
-}
-
-#section-contact .section-titleP span::before,
-#section-contact .section-titleP span::after {
-  background: #fff;
-}
-
-.contact-wrap {
-    /* width: 950px;    */
-  width: 788px; 
-  height: 283px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.contact-li {
-  height: 200px;
-  padding: 40px 0px 15px 0px;
-}
-
-.contact-li img {
-  width: 100%;
-  height: 141px;
-}
-
-.contact-li .contact-liWrap {
-  text-align: center;
-  color: #333333;
-  font-size: 12px;
-  background-color: #ffffff;
-}
-
-.contact-li p {
-  line-height: 24px;
-  color: #333;
-}
-
-.contact-li div span {
-  width: 117px;
-  display: block;
-  height: 1px;
-  background: -webkit-linear-gradient(to right, #fff, #d4dce1, #fff);
-  background: -o-linear-gradient(to right, #fff, #d4dce1, #fff);
-  background: -moz-linear-gradient(to right, #fff, #d4dce1, #fff);
-  background: linear-gradient(to right, #fff, #d4dce1, #fff);
-}
-
-.contact-wrap .swiper-container {
-  height: 100%;
-}
-
-.contact-wrap .swiper-pagination-bullet {
-  border: 2px solid #b8c6d5;
-  background: transparent;
-}
-
-.contact-wrap .swiper-pagination-bullet-active {
-  background: transparent;
-  border: 2px solid #16df93;
-}
-
-.contact-wrap .contact-swiperBntP {
-  width: 44px;
-  height: 44px;
-  display: block;
-  background: url(../images/swiperBntG.png) no-repeat;
-  left: -60px;
-  transform: rotate(180deg)
-}
-
-.contact-wrap .contact-swiperBntN {
-  width: 44px;
-  height: 44px;
-  display: block;
-  background: url(../images/swiperBntG.png) no-repeat;
-  right: -60px;
-}
-
-.section-titleH {
-  text-align: center;
-  font-size: 30px;
-  color: #ffffff;
-  padding: 63px 0 6px 0;
-}
 

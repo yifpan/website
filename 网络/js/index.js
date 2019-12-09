@@ -6,13 +6,12 @@ $(function () {
         this.apiUrl = "https://api.cocogc.cn/";
 
         //banner
+        var swiperLen = $('.swiper-wrapper').children('.swiper-slide').length;
         this.mySwiperNav = new Swiper('#header-nav .swiper-container', {
-            pagination: '.swiper-pagination',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            // loop: true,
-            // autoplay: 2000,
-            // autoplayDisableOnInteraction : false,
+          loop: swiperLen>1?true:false,
+          autoplay:swiperLen>1?true:false,
+          pagination: swiperLen>1?{el: '.swiper-pagination'}:'',
+          allowTouchMove:swiperLen>1?true:false,
         })
 
         $.ajax({
@@ -31,7 +30,7 @@ $(function () {
                     for (var i = 0; i < 3; i++) {
                         $(".contenHid").html(data[i].noticeContent);
                         var noticeContent = $(".contenHid").text();
-                        var createTime = data[i].createTime.split(' ')[0].replace(/-/g, '.');
+                        var createTime = data[i].url?data[i].url.split(' ')[0].replace(/-/g, '.'):'';
                         var html = `
                             <div class="swiper-slide">
                               <a class="news-left" href="articel.html?noticeId=${data[i].noticeId}" >
@@ -47,13 +46,13 @@ $(function () {
                         $(".news-wrapper").append(html);
                     }
                     for (var i = 3; i < 6; i++) {
-                        var day = data[i].createTime.split('-')[2].split(' ')[0];
-                        var year =  data[i].createTime.split(' ')[0].split('-')[0]+'.'+ data[i].createTime.split(' ')[0].split('-')[1];
+                        var day = data[i].url?(data[i].url.split('-')[2].split(' ')[0]):'';
+                        var year = data[i].url?(data[i].url.split(' ')[0].split('-')[0]+'.'+ data[i].url.split(' ')[0].split('-')[1]):'';
                         var html = `
                             <li>
                                 <a href="articel.html?noticeId=${data[i].noticeId}">
                                     <div class="time">
-                                    <p class="day">${day<10?`0${day}`:day}</p>
+                                    <p class="day">${day}</p>
                                     <p class="year">${year}</p>
                                     </div>
                                     <h5>${data[i].noticeTitle}</h5>
@@ -64,13 +63,9 @@ $(function () {
                     }
                     //新闻事件
                     this.mySwiperNav = new Swiper('#News .swiper-container', {
-                        pagination: '.swiper-pagination',
-                        nextButton: '.swiper-button-next',
-                        prevButton: '.swiper-button-prev',
+                        pagination:  {el: '.swiper-pagination',clickable :true},
                         loop: true,
-                        // autoplay: 2000,
                         autoplayDisableOnInteraction : false,
-                        paginationClickable :true
                     })
                 }
             },
@@ -79,7 +74,6 @@ $(function () {
             }
         })
         
-       
         $(".close").on('click',function(){
             $(".zizhi-wrap").hide();
             $(".zizhi").css('transform','translateY(0px)');
@@ -102,7 +96,15 @@ $(function () {
             $('.nav-Wrap').css('background','transparent')
         }
         $('.brand-wrap').removeClass('scroll-hidden').addClass('scroll-visible');
-        $(window).on('scroll', function (e) {
+
+
+    var ua = navigator.userAgent;
+    var ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
+    var isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
+    var isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+    var isMobile = isIphone || isAndroid || ipad;
+    if(!isMobile){
+    $(window).on('scroll', function (e) {
             let top = document.documentElement.scrollTop || document.body.scrollTop;
             if(top>0){
                 $('.nav-Wrap').css('background','#22ADF7')
@@ -110,14 +112,14 @@ $(function () {
                 $('.nav-Wrap').css('background','transparent')
             }
             let distance = top - 1140
-            $('.bg-circle .cricle01').css('transform',`translate(${distance}px,${-distance}px)`)
-            $('.bg-circle .cricle02').css('transform',`translate(${-distance}px,${-distance}px)`)
-            $('.bg-circle .cricle03').css('transform',`translate(${distance}px,${distance}px)`)
-            $('.bg-circle .cricle04').css('transform',`translate(${-distance}px,${distance}px)`)
-            $('.bg-circle .cricle05').css('transform',`translate(${distance}px,${-distance}px)`)
-            $('.bg-circle .cricle06').css('transform',`translate(${-distance}px,${-distance}px)`)
-            $('.bg-circle .cricle07').css('transform',`translate(${distance}px,${-distance}px)`)
-            $('.bg-circle .cricle08').css('transform',`translate(${-distance}px,${-distance}px)`)
+            $('.bg-circle .cricle01').css('transform',`translate(${distance/2}px,${distance}px)`)
+            $('.bg-circle .cricle02').css('transform',`translate(${-distance/2}px,${distance}px)`)
+            $('.bg-circle .cricle03').css('transform',`translate(${distance/2}px,${-distance}px)`)
+            $('.bg-circle .cricle04').css('transform',`translate(${-distance/2}px,${-distance}px)`)
+            $('.bg-circle .cricle05').css('transform',`translate(${distance/2}px,${distance}px)`)
+            $('.bg-circle .cricle06').css('transform',`translate(${-distance/2}px,${distance}px)`)
+            $('.bg-circle .cricle07').css('transform',`translate(${distance/2}px,${-distance}px)`)
+            $('.bg-circle .cricle08').css('transform',`translate(${-distance/2}px,${-distance}px)`)
             //隐藏
             if(top<295){
                 $('#Product h2').addClass('scroll-hidden').removeClass('scroll-visible');
@@ -170,7 +172,7 @@ $(function () {
             if(top<4170){
                 $('#Consultation span').removeClass('scroll-visible').addClass('scroll-hidden');
             }
- 
+        
             //出现
             if(top>324){
                 $('#Product h2').removeClass('scroll-hidden').addClass('scroll-visible');
@@ -224,6 +226,7 @@ $(function () {
                 $('#Consultation span').removeClass('scroll-hidden').addClass('scroll-visible');
             }
         })
+    }
 
     }    
 })
