@@ -34,16 +34,13 @@ $(function () {
     })
     
     //导航栏滚动
-    $(".nav-Wrap .nav-list li a").off("click").on("click", function () {
-        var navIndex = $(this).parent().index();
-        if(navIndex != 5){
-            $(".nav-list li").find('a').removeClass("activeNav");
-            $(".nav-list li").find('a').eq(navIndex).addClass("activeNav");
-        }
-        $("html, body").animate({
-            scrollTop: $($(this).attr("href")).offset().top + "px"
-        }, 500);
-    })
+    $("#contactTop").off("click").on("click", function () { $("html, body").animate({ scrollTop:  "720px"}, 300); })
+    $("#advantageTop").off("click").on("click", function () { $("html, body").animate({ scrollTop:  "2355px"}, 300); })
+    $("#industryTop").off("click").on("click", function () { $("html, body").animate({ scrollTop:  "3895px"}, 300); })
+    $("#previewTop").off("click").on("click", function () { $("html, body").animate({ scrollTop:  "5817px"}, 300); })
+    $("#processTop").off("click").on("click", function () { $("html, body").animate({ scrollTop:  "6571px"}, 300); })
+
+
 
     $(".adv-ul li").hover(function () {
       $(this).find(".adv-imga").show();
@@ -58,32 +55,33 @@ $(function () {
         $(this).find(".adv-imga").hide();
         $(this).find(".adv-infoa").hide();
         $(this).css('background',"transparent");
-        $(this).removeClass("animate-visible").addClass("animate-hidden")
+        $(this).removeClass("animate-visible").addClass("animate-hidden");
     })
 
     $(window).on('scroll', function (e) {
       var top = document.documentElement.scrollTop || document.body.scrollTop;
+      console.log(top)
       $(".nav-Wrap").attr("data-fixed", top>0 ? "fixed" : "");
       $(".nav-Wrap .logo").css("background-image", top>0 ? "url('images/logo1.png')" : "url('images/logo.png')");
       if (719 >= top) {
           $(".nav-list li").find('a').removeClass("activeNav");
-      } else if (719 < top && top <= 2234) {
+      } else if (719 < top && top <= 2354) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(0).find('a').addClass("activeNav");
 
-      } else if (2234 < top && top <= 3627) {
+      } else if (2354 < top && top <= 3894) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(1).find('a').addClass("activeNav");
 
-      } else if (3627 < top && top <= 5524) {
+      } else if (3894 < top && top <= 5816) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(2).find('a').addClass("activeNav");
 
-      } else if (5524 < top && top <= 6280) {
+      } else if (5816 < top && top <= 6570) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(3).find('a').addClass("activeNav");
 
-      } else if (top > 6280) {
+      } else if (top > 6570) {
           $(".nav-list li").find('a').removeClass("activeNav");
           $(".nav-list li").eq(4).find('a').addClass("activeNav");
       }

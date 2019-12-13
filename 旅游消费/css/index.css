@@ -156,8 +156,8 @@ h2 {
 }
 .logo,
 .logoa {
-  width: 129px;
-  height: 49px;
+  width: 165px;
+  height: 52px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   float: left;
@@ -172,8 +172,8 @@ h2 {
 .nav-Wrap .logo h1,
 .nav-Wrap .logoa h1 {
   text-indent: -9999px;
-  width: 129px;
-  height: 49px;
+  width: 165px;
+  height: 52px;
   overflow: hidden;
 }
 /******************************************************  项目运营模式 **********************************************************/
@@ -430,34 +430,24 @@ h2 {
   width: 1px;
   position: absolute;
   top: 24px;
-  right: -40px;
+  right: -68px;
   height: 295px;
   background: #ccc;
 }
 #footer .footer-wrap .footer-link .link-left,
 #footer .footer-wrap .footer-link .link-right {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   vertical-align: top;
 }
 #footer .footer-wrap .footer-link .link-left .dl-5,
 #footer .footer-wrap .footer-link .link-right .dl-5 {
   display: block;
-  margin-top: 54px;
+  margin-top: 30px;
 }
-#footer .footer-wrap .footer-link .link-left .dl-5 dt,
-#footer .footer-wrap .footer-link .link-right .dl-5 dt,
-#footer .footer-wrap .footer-link .link-left .dl-5 dd,
-#footer .footer-wrap .footer-link .link-right .dl-5 dd,
-#footer .footer-wrap .footer-link .link-left .dl-5 ul,
-#footer .footer-wrap .footer-link .link-right .dl-5 ul,
-#footer .footer-wrap .footer-link .link-left .dl-5 li,
-#footer .footer-wrap .footer-link .link-right .dl-5 li {
-  display: inline-block;
-}
-#footer .footer-wrap .footer-link .link-left .dl-5 li,
-#footer .footer-wrap .footer-link .link-right .dl-5 li {
-  margin-right: 20px;
+#footer .footer-wrap .footer-link .link-left .dl-5 a,
+#footer .footer-wrap .footer-link .link-right .dl-5 a {
+  color: #22ADF7;
 }
 #footer .footer-wrap .footer-link .link-left dl,
 #footer .footer-wrap .footer-link .link-right dl {
@@ -467,12 +457,12 @@ h2 {
 }
 #footer .footer-wrap .footer-link .link-left dl dt,
 #footer .footer-wrap .footer-link .link-right dl dt {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 #footer .footer-wrap .footer-link .link-left dl dd,
 #footer .footer-wrap .footer-link .link-right dl dd {
-  font-size: 16px;
+  font-size: 14px;
 }
 #footer .footer-wrap .footer-link .link-left dl dd ul li,
 #footer .footer-wrap .footer-link .link-right dl dd ul li {
@@ -488,23 +478,22 @@ h2 {
   color: #22ADF7;
 }
 #footer .footer-wrap .footer-link .link-right {
-  margin-left: 140px;
+  margin-left: 196px;
 }
 #footer .footer-wrap .footer-link .link-right .public {
   display: inline-block;
   margin-top: 32px;
-  margin-right: 80px;
   text-align: center;
 }
 #footer .footer-wrap .footer-link .link-right .public:nth-of-type(2) {
-  margin-right: 0;
+  margin-left: 108px;
 }
 #footer .footer-wrap .footer-link .link-right .public img {
   width: 120px;
 }
 #footer .footer-wrap .footer-link .link-right .public p {
   font-size: 14px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 #footer .footer-bottom {
   background: #444444;
