@@ -128,12 +128,12 @@ html {
 }
 .logo,
 .logoa {
-  width: 129px;
-  height: 49px;
+  width: 147px;
+  height: 56px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   float: left;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 .logo {
   background-image: url("../images/logo_w.png");
@@ -144,8 +144,8 @@ html {
 .nav-Wrap .logo h1,
 .nav-Wrap .logoa h1 {
   text-indent: -9999px;
-  width: 129px;
-  height: 49px;
+  width: 147px;
+  height: 56px;
   overflow: hidden;
 }
 .swiper-container .nav-swiperBntP,
