@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>椰子竞技积分</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <link rel="icon" href="bitbug_favicon.ico" type="image/x-icon" />
+    <link href="css/style.min.css?_v=201912181610" rel="stylesheet">
+</head>
+
+<body style="position:relative">
+    <!-- 头部 -->
+    <header id="header-nav" style="width:100%;height:88px;">
+        <a name="home" id="home"></a>
+        <div class="nav-Bg" style="    min-width: 1200px;">
+            <div class="nav-Wrap" style="background:#141621">
+                <div class="nav-inner">
+                    <div class="logoa">
+                        <a href="index.html">
+                            <h1>椰子竞技积分</h1>
+                        </a>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="activeNav">
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="index.html">案例展示</a>
+                        </li>
+                        <li>
+                            <a href="index.html">新闻中心</a>
+                        </li>
+                        <li>
+                            <a href="index.html">项目特色</a>
+                        </li>
+                        <li>
+                            <a href="index.html">椰云产品</a>
+                        </li>
+                        <li>
+                            <a href="index.html">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+
+    <div class="article">
+        <div class="load">
+            <div class="spinner">
+                <div class="spinner-container container1">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container2">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container3">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+            </div>
+            <p>加载中...</p>
+        </div>
+        <div class="art-contentWrap">
+            <h2 class="art-Title"></h2>
+            <p class="art-time">
+                <span class="art-timeImg"></span>
+                <span class="art-upTime"></span>
+            </p>
+            <article class="art-content"></article>
+
+            <div class="shareWrap">
+            </div>
+            <div class="art-page">
+                <p class="page-clickP"></p>
+                <p class="page-clickN"></p>
+            </div>
+        </div>
+
+    </div>
+    <!-- 底部 -->
+    <footer id="footer">
+        <div class="footer-wx">
+            <div class="footer-wxg">
+                <p class="footer-wxc">关注椰子竞技积分</p>
+            </div>
+        </div>
+        <ul class="footer-nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html">项目简介</a></li>
+            <li><a href="index.html">椰云产品</a></li>
+            <li><a href="index.html">联系方式</a></li>
+        </ul>
+        <p class="footer-record">琼ICP备18003160号-1 &nbsp;&nbsp;&nbsp; 海南自贸区椰云网络科技有限公司</p>
+    </footer>
+</body>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<script>
+    $(function () {
+        new articel();
+        function articel() {
+            // 生产地址
+            this.apiUrl = "https://api.cocogc.cn/"
+
+            var ua = navigator.userAgent;
+            var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+            isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+            isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+
+            if(isAndroid||isIphone||ipad){
+                var articleH = window.innerHeight - $('.nav-Wrap').height() - $('#footer').height()-146;
+                $('.article').css('min-height',articleH)
+            }
+
+            this.noticeId = window.location.search.split("?")[1];
+            this.newsInfo = function (noticeId) {
+                $.ajax({
+                    type: "GET",
+                    url: this.apiUrl + "news/newsInfo/" + noticeId,
+                    contentType: 'application/json',
+                    dataType: "json",
+                    beforeSend: function () {
+                        $(".load").show();
+                        $(".art-contentWrap").hide()
+                    },
+                    success: function (result) {
+                        var data = result.data;
+                        if (data.prevId != null) {
+                            var htmlP = `<a href="articel.html?${data.prevId}">上一篇：<span class="art-pageP">${data.prevTitle}</span></a>`
+                            $('.page-clickP').append(htmlP)
+                        }
+                        if (data.nextId != null) {
+                            var htmlN = `<a href="articel.html?${data.nextId}">下一篇：<span class="art-pageP">${data.nextTitle}</span></a>`
+                            $('.page-clickN').append(htmlN)
+                        }
+                        if (data != null) {
+                            $(".load").hide();
+                            $('title').text(data.noticeTitle);
+                            $('.art-Title').text(data.noticeTitle);
+                            $('.art-upTime').text(data.createTime);
+                            $('.art-content').html(data.noticeContent);
+                            $(".art-contentWrap").show();
+                        }
+                    },
+                    error: function (result) {
+
+                    }
+                });
+            }
+
+            this.newsInfo(this.noticeId);
+            //显示微信公众号
+            $(".footer-wx").hover(function () {
+                $(".footer-wxg").show();
+            }, function () {
+                $(".footer-wxg").hide();
+            })
+        }
+    })
+
+</script>
+</body>
+
+</html>

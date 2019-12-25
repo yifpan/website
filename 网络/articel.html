@@ -178,7 +178,18 @@
     new articel();
     function articel() {
         // 生产地址
-        this.apiUrl = "https://api.cocogc.cn/"
+        this.apiUrl = "https://api.cocogc.cn/";
+
+        //移动端文章高度
+        var ua = navigator.userAgent;
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+        isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+        isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+        if(isAndroid||isIphone||ipad){
+            var articleH = window.innerHeight - $('.nav-Wrap').height() - $('#footer').height()- 210;
+            $('.article').css('min-height',articleH)
+        }
+
         this.noticeId = window.location.search.split("?")[1].split('=')[1];
         this.newsInfo = function (noticeId) {
             $.ajax({
