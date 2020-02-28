@@ -151,21 +151,24 @@ $(function () {
 
             }
         });
+
+
         //banner
         this.mySwiperNav = new Swiper('#header-nav .swiper-container', {
             pagination: '.swiper-pagination',
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            loop: true,
-            autoplay: 2000,
-            autoplayDisableOnInteraction : false,
+            loop: false,
+            // autoplay: 2000,
+            // autoplayDisableOnInteraction : false,
+            noSwiping:true
         })
 
 
         //联系我们
         this.mySwiperCont = new Swiper('#section-contact .swiper-container', {
-            slidesPerView: 5,
-            slidesPerGroup: 5,
+            slidesPerView: 2,
+            // slidesPerGroup: 5,
             pagination: '.swiper-pagination',
             nextButton: '.contact-swiperBntN',
             prevButton: '.contact-swiperBntP',
@@ -173,6 +176,7 @@ $(function () {
             // loop: true,
             grabCursor: true,
             // simulateTouch: false,
+            noSwiping:true
         })
 
 
@@ -180,7 +184,6 @@ $(function () {
         var _this = this;
         this.swiperActive = function () {
             var swiperActive = $(".feature-wrapper").find(".swiper-slide-active").attr("data-swiper-slide-index");
-            // console.log(swiperActive)
             switch (swiperActive) {
                 case "0":
                     $(".feature-left01").show();
@@ -222,7 +225,7 @@ $(function () {
 
         //项目特色
         this.mySwiperCont = new Swiper('#section-feature .swiper-container', {
-            slidesPerView: 2,
+            slidesPerView: 1,
             nextButton: '.feature-swiperBntN',
             prevButton: '.feature-swiperBntP',
             spaceBetween: 60,
@@ -230,7 +233,7 @@ $(function () {
             simulateTouch: false,
             autoplay:3000,
             autoplayDisableOnInteraction : false,
-
+            noSwiping:false
         })
 
         setInterval(function () {
@@ -262,7 +265,6 @@ $(function () {
             $(".feature-bntP img").attr('src', 'images/arrow_lefth.png');
             $(".feature-bntN img").attr('src', 'images/arrow_right.png');
             $(".feature-bntN").css("background", "#232429")
-
         })
 
         $(".feature-swiperBntN").hover(function () {
@@ -282,7 +284,6 @@ $(function () {
 
         $(window).on('scroll', function (e) {
             var top = document.documentElement.scrollTop || document.body.scrollTop;
-            // console.log(top)
             if (818 >= top) {
                 $(".nav-list li").removeClass("activeNav");
                 $(".nav-list li").eq(0).addClass("activeNav");

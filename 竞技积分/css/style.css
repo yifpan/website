@@ -90,7 +90,7 @@ cursor: pointer;
     margin-top: 20px;
 }
 .logo{
-background-image: url("../images/logo.png");
+    background-image: url("../images/logo.png");
 }
 .logoa{
     background-image: url("../images/logo1.png");
@@ -556,25 +556,27 @@ overflow: hidden;
 
 .feature-Wrap {
     height: 375px;
-    width: 1300px;
+    width: 1150px;
     /* margin-left: 3.56rem; */
     position: relative;
-    float: right;
+    margin: 0 auto;
 }
 
 .feature-right {
     height: 355px;
-    float: left;
     margin-left: 50px;
     position: relative;
-    width: 970px;
+    width: 720px;
     overflow: hidden;
+    margin-top: 15px;
+    float: right;
 }
 
 .feature-left {
     width: 277px;
-    height: 356px;
-    float: left;
+    /* height: 356px; */
+    /* display: inline-block; */
+    float: right;
 }
 
 .feature-left h2 {
@@ -653,14 +655,14 @@ overflow: hidden;
 
 
 .feature-Wrap .feature-swiperBntP {
-    left: 0;
+    left: 103px;
     top: 352px;
     position: absolute;
     width: 65px;
 }
 
 .feature-Wrap .feature-swiperBntN {
-    left: 65px;
+    left: 168px;
     top: 352px;
     width: 65px;
 }
@@ -668,11 +670,39 @@ overflow: hidden;
 
 #section-produte {
     width: 100%;
-    overflow: hidden;
-    background: url(../images/bg_product.jpg) no-repeat center center;
-    height: 597px;
+    /* overflow: hidden; */
+    /* background: url(../images/bg_product.jpg) no-repeat; */
+    /* height: 597px; */
+    position: relative;
+    /* background-size: 100% 100%; */
+    font-size: 0;
 }
-
+#section-produte img{
+    width: 100%;
+}
+.go-website{
+    display: block;
+    position: absolute;
+}
+.yeyun-website{
+    width: 55.5%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 0;
+}
+.zhongbao-website{
+    height: 53%;
+    width: 44.5%;
+    right: 0;
+    top: 0;
+}
+.trave-website{
+    height: 47%;
+    width: 44.5%;
+    right: 0;
+    bottom: 0;
+}
 
 /******************************************************  联系我们 **********************************************************/
 
@@ -715,7 +745,7 @@ overflow: hidden;
 
 .contact-wrap {
       /* width: 950px;    */
-    width: 788px; 
+    width: 300px; 
     height: 293px;
     margin: 0 auto;
     position: relative;
